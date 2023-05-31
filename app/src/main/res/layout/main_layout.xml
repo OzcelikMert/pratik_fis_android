@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainGrid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0EEEE"
+    android:orientation="vertical"
+    tools:context=".main_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <!--
+            =====================
+            Date Layout
+            =====================
+             -->
+            <LinearLayout
+                android:id="@+id/QuestionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Question_Button"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/question" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/CompanyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/DateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/dateText"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/dateTextbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/default_date"
+                    android:inputType="date"
+                    android:maxLength="10" />
+            </LinearLayout>
+            <!--
+            =====================
+            Plug No Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/PlugLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/plugNoView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/plugNoText"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/plugTextbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/plugNoText"
+                    android:inputType="number"
+                    android:maxLength="6" />
+            </LinearLayout>
+            <!--
+            =====================
+            KDV Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/KDVLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/KDVView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="70dp"
+                    android:text="@string/KDVText"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/KDV_1_Layout"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:background="@drawable/kdv_border"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/KDV_checkBox_1"
+                                android:layout_width="64dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxWidth="20dp"
+                                android:text="@string/KDVpercent_1" />
+
+                            <EditText
+                                android:id="@+id/KDV_1_TextBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDVText"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/KDV_1_TextBox_Base"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDV_base"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/KDV_8_Layout"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/kdv_border"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/KDV_checkBox_8"
+                                android:layout_width="64dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxWidth="20dp"
+                                android:text="@string/KDVpercent_8" />
+
+                            <EditText
+                                android:id="@+id/KDV_8_TextBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDVText"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/KDV_8_TextBox_Base"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDV_base"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/KDV_18_Layout"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/kdv_border"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/KDV_checkBox_18"
+                                android:layout_width="64dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="50dp"
+                                android:layout_weight="1"
+                                android:maxWidth="20dp"
+                                android:text="@string/KDVpercent_18" />
+
+                            <EditText
+                                android:id="@+id/KDV_18_TextBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDVText"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/KDV_18_TextBox_Base"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:text="@string/KDV_base"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+            <!--
+            =====================
+            Total KDV Layout
+            =====================
+
+            <LinearLayout
+                android:id="@+id/TotalKDV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totalKDVView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/totalKDV"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/totalKDVTextbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/totalKDV"
+                    android:inputType="text" />
+            </LinearLayout-->
+            <!--
+            =====================
+            Total Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/TotalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totalView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/totalText"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/totalTextbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/totalText"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10" />
+            </LinearLayout>
+            <!--
+            =====================
+            VD Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/VDLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/VDView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/VDText"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/VDTextbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/VDText"
+                    android:inputType="number"
+                    android:maxLength="11" />
+            </LinearLayout>
+            <!--
+            =====================
+            Payment Type Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/PaymentTypeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/PaymentTypeView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
+                    android:minWidth="100dp"
+                    android:text="@string/payment_type"
+                    android:textColor="#585858"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/PaymentRadioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp">
+
+                    <RadioButton
+                        android:id="@+id/cashRButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/cash" />
+
+                    <RadioButton
+                        android:id="@+id/creditRButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/credit" />
+                </RadioGroup>
+
+            </LinearLayout>
+            <!--
+            =====================
+            Send Button Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/SendButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sendButton"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#8CE96F"
+                    android:minHeight="60dp"
+                    android:text="@string/sendText"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+            <!--
+            =====================
+            Open Camera Button Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/OpenCameraButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/openCameraButton"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#6E85F0"
+                    android:minHeight="60dp"
+                    android:text="@string/openCameraText"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+            <!--
+            =====================
+            Open Gallery Button Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/OpenGalleryButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/openGalleryButton"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#E99D5C"
+                    android:minHeight="60dp"
+                    android:text="@string/openGalleryText"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+            <!--
+            =====================
+            Settings Button Layout
+            =====================
+            -->
+            <LinearLayout
+                android:id="@+id/SettingsButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/SettingsButton"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#7FE9E9"
+                    android:minHeight="60dp"
+                    android:text="@string/settings"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

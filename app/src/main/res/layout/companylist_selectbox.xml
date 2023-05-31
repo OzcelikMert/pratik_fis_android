@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="452dp"
+        android:background="#8BFFF3"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/select_company"
+            android:textAlignment="center"
+            android:textColor="#EB1F1F"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/companyList"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:choiceMode="singleChoice"
+            android:clickable="true" />
+
+
+        <Button
+            android:id="@+id/Cancel_btn"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E94F4F"
+            android:minHeight="50dp"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+</RelativeLayout>
